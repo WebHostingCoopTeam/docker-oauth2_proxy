@@ -2,6 +2,8 @@ FROM golang:1.9-alpine
 
 MAINTAINER Josh Cox "https://github.com/WebHostingCoopTeam/docker-oauth2_proxy/issues"
 
+ENV OAUTH2_PROXY_UPDATE 20170702
+
 RUN apk update && apk upgrade && \
 apk add git && \
 rm -rf /var/cache/apk/*
@@ -14,4 +16,5 @@ VOLUME /conf
 
 EXPOSE 4180
 
-CMD ["oauth2_proxy", "-config", "/conf/oauth2_proxy.cfg"]
+COPY start.sh /start.sh
+CMD ["/start.sh"]

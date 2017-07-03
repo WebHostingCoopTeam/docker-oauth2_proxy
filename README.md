@@ -23,3 +23,13 @@ This repository contains **Dockerfile** of [oauth2_proxy](https://github.com/bit
     create a file <config-dir>/oauth2_proxy.cfg for configuration
 
     docker run -d -p 4180:4180 -v <config-dir>:/conf crate/oauth2_proxy
+
+#### ENV vars
+
+the oauth_proxy will be called with two arguments and whatever you want to
+put in OAUTH2_PROXY_ARGS
+
+i.e.
+```
+oauth2_proxy -upstream $UPSTREAM $OATH2_PROXY_ARGS
+```
