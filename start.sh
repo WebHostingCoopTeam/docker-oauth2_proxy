@@ -1,9 +1,9 @@
 #!/bin/sh
 
-# if unset or null make it '*'
-EMAIL_DOMAIN="${EMAIL_DOMAIN:-'*'}"
+# if unset or null make it *
+EMAIL_DOMAIN="${EMAIL_DOMAIN:-*}"
 
-export OAUTH2_CMDLINE="-upstream $UPSTREAM -email-domain=$EMAIL_DOMAIN $OATH2_PROXY_ARGS"
+export OAUTH2_CMDLINE="-upstream $UPSTREAM -provider $PROVIDER -email-domain=$EMAIL_DOMAIN $OATH2_PROXY_ARGS"
 
 if [ -f /conf/oauth2_proxy.cfg ]
   then
