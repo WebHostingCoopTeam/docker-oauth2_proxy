@@ -3,7 +3,7 @@
 # if unset or null make it *
 EMAIL_DOMAIN="${EMAIL_DOMAIN:-*}"
 
-export OAUTH2_CMDLINE="-upstream $UPSTREAM -provider $PROVIDER -email-domain=$EMAIL_DOMAIN $OATH2_PROXY_ARGS"
+export OAUTH2_CMDLINE=" -http-address http://0.0.0.0:4180 -upstream $UPSTREAM -provider $PROVIDER -email-domain=$EMAIL_DOMAIN $OATH2_PROXY_ARGS"
 
 if [ -f /conf/oauth2_proxy.cfg ]
   then
