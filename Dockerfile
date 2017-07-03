@@ -8,7 +8,7 @@ RUN apk update && apk upgrade && \
 apk add git && \
 rm -rf /var/cache/apk/*
 
-RUN git clone --branch master https://github.com/bitly/oauth2_proxy.git /go/src/app \
+RUN git clone --branch v2.0.1 https://github.com/bitly/oauth2_proxy.git /go/src/app \
 && go get -d -v github.com/bitly/oauth2_proxy \
 && go install -v github.com/bitly/oauth2_proxy
 
