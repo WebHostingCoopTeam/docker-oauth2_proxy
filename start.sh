@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 if [ ! -f /conf/oauth2_proxy.cfg ]
   then
