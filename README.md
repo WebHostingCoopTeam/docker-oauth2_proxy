@@ -27,9 +27,9 @@ This repository contains **Dockerfile** of [oauth2_proxy](https://github.com/bit
 #### ENV vars
 
 the oauth_proxy will be called with two arguments and whatever you want to
-put in OAUTH_PROXY_ARGS
+put in OAUTH2_PROXY_ARGS
 
 i.e.
 ```
-oauth2_proxy -upstream $UPSTREAM $OATH_PROXY_ARGS
+oauth2_proxy -upstream $UPSTREAM $OATH2_PROXY_ARGS
 ```
