@@ -13,4 +13,6 @@ if [ -f /conf/oauth2_proxy.cfg ]
     OATH_CMDLINE="-config /conf/oauth2_proxy.cfg $OATH_CMDLINE"
 fi
 
+echo "$OAUTH2_PROXY $OAUTH_CMDLINE"
+echo 'starting .....'
 $OAUTH2_PROXY $OAUTH_CMDLINE
