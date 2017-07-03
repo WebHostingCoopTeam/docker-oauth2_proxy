@@ -16,4 +16,5 @@ VOLUME /conf
 
 EXPOSE 4180
 
-CMD ["oauth2_proxy", "-config", "/conf/oauth2_proxy.cfg"]
+COPY start.sh /start.sh
+CMD ["/start.sh"]
