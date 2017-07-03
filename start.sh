@@ -9,7 +9,7 @@ ls /conf
 which oauth2_proxy
 
 
-if [ ! -f /conf/oauth2_proxy.cfg ]
+if [ -f /conf/oauth2_proxy.cfg ]
   then
     oauth2_proxy -config /conf/oauth2_proxy.cfg -upstream $UPSTREAM $OATH2_PROXY_ARGS
 else
