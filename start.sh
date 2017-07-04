@@ -1,8 +1,17 @@
 #!/bin/sh
 
+# if unset or null make it *
+EMAIL_DOMAIN="${EMAIL_DOMAIN:-*}"
+
+export OAUTH2_CMDLINE=" -http-address http://0.0.0.0:4180 -upstream $UPSTREAM -provider $PROVIDER -email-domain=$EMAIL_DOMAIN $OATH2_PROXY_ARGS"
+
 if [ -f /conf/oauth2_proxy.cfg ]
   then
-    oauth2_proxy -config /conf/oauth2_proxy.cfg -upstream $UPSTREAM $OATH2_PROXY_ARGS
-else
-    oauth2_proxy -upstream $UPSTREAM $OATH2_PROXY_ARGS
+    export OAUTH2_CMDLINE="-config /conf/oauth2_proxy.cfg $OAUTH2_CMDLINE"
 fi
+
+export OAUTH2_CMDLINE="oauth2_proxy $OAUTH2_CMDLINE"
+echo "cmdline is $OAUTH2_CMDLINE"
+echo 'starting .....'
+
+$OAUTH2_CMDLINE
